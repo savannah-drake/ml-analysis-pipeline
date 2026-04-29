@@ -1,3 +1,4 @@
+import os
 import pandas as pd
 import matplotlib.pyplot as plt
 from sklearn.cluster import KMeans
@@ -22,6 +23,7 @@ def run_clustering(data_path="data/clustering_data.csv", n_clusters=3):
     plt.xlabel(X.columns[0])
     plt.ylabel(X.columns[1])
     plt.title("Customer Segmentation via K-Means Clustering")
+    os.makedirs("outputs/visuals", exist_ok=True)
     plt.savefig("outputs/visuals/clustering_results.png", dpi=300, bbox_inches="tight")
     plt.close()
 

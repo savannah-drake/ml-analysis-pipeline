@@ -1,5 +1,6 @@
 import pandas as pd
 import matplotlib.pyplot as plt
+import os
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import mean_squared_error, r2_score
 from sklearn.ensemble import RandomForestRegressor
@@ -28,6 +29,8 @@ def run_regression(data_path="data/regression_data.csv"):
     plt.xlabel("Actual Values")
     plt.ylabel("Predicted Values")
     plt.title("Regression Model: Actual vs Predicted Values")
+    os.makedirs("outputs/visuals", exist_ok=True)
+    os.makedirs("outputs/models", exist_ok=True)
     plt.savefig("outputs/visuals/regression_actual_vs_predicted.png", dpi=300, bbox_inches="tight")
     plt.close()
 

@@ -1,3 +1,5 @@
+import os
+
 import pandas as pd
 import matplotlib.pyplot as plt
 from sklearn.model_selection import train_test_split
@@ -26,6 +28,8 @@ def run_classification(data_path="data/classification_data.csv"):
 
     display.plot()
     plt.title("Model Performance: Confusion Matrix")
+    os.makedirs("outputs/visuals", exist_ok=True)
+    os.makedirs("outputs/models", exist_ok=True)
     plt.savefig("outputs/visuals/classification_confusion_matrix.png", dpi=300, bbox_inches="tight")
     plt.close()
 
